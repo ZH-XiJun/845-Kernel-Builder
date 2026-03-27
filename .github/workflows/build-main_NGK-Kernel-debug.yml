@@ -24,7 +24,7 @@ jobs:
         id: generate-matrix
         run: |
           echo "repos<<EOF" >> $GITHUB_OUTPUT
-          jq -s '[.[][]]' repos*-NGK.json >> $GITHUB_OUTPUT
+          jq -s '[.[][]]' repos.dipper-NGK.json >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
       - name: "⏰ Set builddate"
         id: generate-builddate
