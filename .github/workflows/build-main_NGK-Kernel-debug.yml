@@ -1,4 +1,4 @@
-name: "Build-main NGK kernels"
+name: "Build-main NGK kernels for dipper"
 
 on:
   workflow_dispatch:
@@ -146,9 +146,6 @@ jobs:
           echo -e "CONFIG_KPROBE_EVENTS=y" >> arch/${{ env.arch }}/configs/${{ env.DEFCONFIG_NAME }}
 
           cat arch/${{ env.arch }}/configs/${{ env.DEFCONFIG_NAME }}
-
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
 
       - name: "👍 Make defconfig"
         working-directory: ${{ env.KERNEL_NAME }}
